@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import  java.awt.geom.*; 
+import  java.awt.geom.*; //modificado 1
 public class Hello2DApp {
     public static void main (String[] args) {
         Hello2DFrame frame = new Hello2DFrame();
@@ -19,7 +19,7 @@ class Hello2DFrame extends JFrame {
         );
         this.setTitle("Java2D - Hello World!");
         this.setSize(350, 350);
-		this.getContentPane().setBackground( new Color(0,0,0));
+		this.getContentPane().setBackground( new Color(0,0,0));//modificado 2
         this.setVisible(true);
     }
 
@@ -29,8 +29,8 @@ class Hello2DFrame extends JFrame {
         g2d.setPaint(Color.green);
         int w = getWidth();
         int h = getHeight();
-        g2d.drawLine((w/2)-w*4/100, 3*h/4, w/4, h/2);
-        g2d.drawLine((w/2)+w*4/100, 3*h/4, w*3/4, h/2);
+        g2d.drawLine((w/2)-w*4/100, 3*h/4, w/4, h/2);//modificado 3
+        g2d.drawLine((w/2)+w*4/100, 3*h/4, w*3/4, h/2);//modificado 4
 
 		
 	g2d.setPaint(Color.red);//elipses
