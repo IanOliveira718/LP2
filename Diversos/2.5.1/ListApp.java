@@ -63,7 +63,7 @@ class ListFrame extends JFrame {
             }//3
         );//4
 
-        this.setTitle("Lista de Retangulos e Ellipses");
+        this.setTitle("Lista de Retangulos e Ellipses");//modificado
         this.setSize(350, 350);
     }
 
