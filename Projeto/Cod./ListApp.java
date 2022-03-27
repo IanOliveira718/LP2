@@ -18,16 +18,6 @@ class ListFrame extends JFrame {
     Figure save=null;
     int x,y;
 
-public void  mousePressed (MouseEvent evt){
-	save=null;
-	for (Figure fig: fs){
-		if(evt.getX()>=fig.x && && evt.getY()>=fig.y){
-			save=fig;
-		}
-	save.local();
-	}
-}
-
 
     ListFrame () {
         this.addWindowListener (
@@ -41,7 +31,7 @@ public void  mousePressed (MouseEvent evt){
 
         this.addKeyListener (//4
             new KeyAdapter() {//3
-                public void keyPressed (KeyEvent evt) {//2			    fs.add(new Txt(50, 50,255, 0, 0, "Haha"));
+                public void keyPressed (KeyEvent evt) {//2 fs.add(new Txt(50, 50,255, 0, 0, "Haha"));
                     if (evt.getKeyChar() == 'r') {//1
                         int x = rand.nextInt(350);
                         int y = rand.nextInt(350);
@@ -69,7 +59,7 @@ public void  mousePressed (MouseEvent evt){
 				  int ig = rand.nextInt(255);
 				  int ib = rand.nextInt(255);
                         fs.add(new Ellipse(x, y, w, h,r, g, b, ir, ig, ib));
-                        repaint();  // outer.repaint()
+                        repaint(); 
                     }//1
 if (evt.getKeyChar() == 'c') {//1
                         int x = rand.nextInt(350);
@@ -83,13 +73,25 @@ if (evt.getKeyChar() == 'c') {//1
 				  int y2 = rand.nextInt(350);
 				  
                         fs.add(new Quadcurve(x, y, cx, cy, x2, y2, r, g, b));
-                        repaint();  // outer.repaint()
+                        repaint();
                     }//1
 
 
                 }//2
             }//3
         );//4
+
+	this.addMouseListener(
+	new MouseAdapter(){
+		public void  mousePressed (MouseEvent evt){
+	save=null;
+	for (Figure fig: fs){
+		if(evt.getX()>=fig.x && evt.getY()>=fig.y){// a melhorar o parametro
+			save=fig;
+		}
+	save.local();
+	}
+}
 
         this.setTitle("Lista Figuras");
         this.setSize(350, 350);
