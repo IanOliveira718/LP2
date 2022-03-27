@@ -85,13 +85,17 @@ if (evt.getKeyChar() == 'c') {//1
 	new MouseAdapter(){
 		public void  mousePressed (MouseEvent evt){
 	save=null;
+	x=evt.getX();
+	y=evt.getY();
 	for (Figure fig: fs){
-		if(evt.getX()>=fig.x && evt.getY()>=fig.y){// a melhorar o parametro
-			save=fig;
+		if(x>=fig.x && x<=fig.x + fig.w &&  y>=fig.y && y<=fig.y + fig.h){
+		save=fig;
+		z=1;
 		}
-	save.local();
+	if(z==1){save.local(); z=0;}
 	}
 }
+
 
         this.setTitle("Lista Figuras");
         this.setSize(350, 350);
