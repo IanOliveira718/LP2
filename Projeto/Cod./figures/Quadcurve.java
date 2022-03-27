@@ -32,7 +32,7 @@ public class Quadcurve extends Figure{
     }
     
 	public void local(){
-	System.out.format("Local %d %d %d %d",this.x,this.y,this.x2,this.y2);
+	System.out.format("Local %d %d %d %d",this.x,this.y,this.w,this.h);
 	}
 
 
