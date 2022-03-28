@@ -22,5 +22,10 @@ public class Txt extends Figure{
     public void local(){
 	System.out.format("Local %d %d ",this.x,this.y);
 	}
+    public void drag(int x,int y){
+	this.x=this.x+x;
+	this.y=this.y+y;
+	}
+
 
 }
