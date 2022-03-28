@@ -16,7 +16,7 @@ class ListFrame extends JFrame {
     ArrayList<Figure> fs = new ArrayList<Figure>();
     Random rand = new Random();
     Figure save=null;
-    int x,y;
+    int x,y,z;
 
 
     ListFrame () {
