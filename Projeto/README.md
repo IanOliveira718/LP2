@@ -8,6 +8,12 @@
 + Basta compilar apenas o arquivo _ListApp.java_;
 + Ao final, para executar o app, basta executar o  _ListApp_ ;
 
+#### Criar objeto:
++ Primeiro selecione o objeto com o mouse, daí
++ Aperte **r** para criar um retângulo
++ Aperte **e** para criar uma ellipse
++ Aperte **c** para criar uma curva quádrica
+
 #### Mover objeto:
 + Primeiro selecione o objeto com o mouse, daí
 + Aperte **w** para o objeto mover para cima
