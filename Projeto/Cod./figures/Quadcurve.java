@@ -37,6 +37,10 @@ public class Quadcurve extends Figure{
 	public void drag(int x,int y){
 		this.x=this.x+x;
 		this.y=this.y+y;
+		this.cx=this.cx+x;
+		this.cy=this.cy+y;
+		this.w=this.w+x;
+		this.h=this.h+y;
 	}
 
 
