@@ -99,21 +99,24 @@ if (evt.getKeyChar() == 'c') {//1
             }//3
         );//4
 
-	this.addMouseListener(
-	new MouseAdapter(){
-		public void  mousePressed (MouseEvent evt){
+this.addMouseListener(
+	new MouseAdapter(){//1
+		public void  mousePressed (MouseEvent evt){//2
 	save=null;
 	x=evt.getX();
 	y=evt.getY();
-	for (Figure fig: fs){
-		if(x>=fig.x && x<=fig.x + fig.w &&  y>=fig.y && y<=fig.y + fig.h ){
+	for (Figure fig: fs){//3
+		if(x>=fig.x && x<=fig.x + fig.w &&  y>=fig.y && y<=fig.y + fig.h ){//4
 		save=fig;
 		z=1;
-		}
+		}//4
 	if(z==1){save.local(); z=0;}
-	}
-}
-);
+	}//3
+}//2
+
+		}//1
+	);
+
 
 
         this.setTitle("Lista Figuras");
