@@ -5,4 +5,5 @@ public abstract class Figure{
    public int r,g,b;
    public abstract void paint(Graphics g);
    public abstract void local();
+   public abstract void drag(int x,int y);
 }
