@@ -31,4 +31,9 @@ public class Ellipse extends Figure{
 public void local(){
 	System.out.format("Local %d %d %d %d",this.x,this.y,this.w,this.h);
 	}
+	public void drag(int x,int y){
+		this.x=this.x+x;
+		this.y=this.y+y;
+	}
+
 }
