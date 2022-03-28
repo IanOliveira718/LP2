@@ -1,5 +1,13 @@
 # Projeto de editor gráfico:
 
+#### Para compilar e rodar o app:
++ Coloque o _ListApp.java_ em qualquer diretorio;
++ Crie uma pasta neste mesmo diretório chamada figures;
++ Coloque dentro desta nova pasta figures os Aquivos de 
+  https://github.com/IanOliveira718/LP2/tree/a617d66bc285598e474ee9363a49ae170d473014/Projeto/Cod./figures;
++ Basta compilar apenas o arquivo _ListApp.java_;
++ Ao final, para executar o app, basta executar o  _ListApp_ ;
+
 #### Mover objeto:
 + Primeiro selecione o objeto com o mouse, daí
 + Aperte **w** para o objeto mover para cima
