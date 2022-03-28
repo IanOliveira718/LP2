@@ -8,5 +8,5 @@
 + Aperte **d** para o objeto mover para direita
 
 #### Saber posição e especificação do objeto:
-+ Basta clicar no objeto desejado e verificar o cmd
++ Basta clicar no objeto desejado e verificar no cmd
 
