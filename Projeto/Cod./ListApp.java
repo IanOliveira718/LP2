@@ -32,6 +32,24 @@ class ListFrame extends JFrame {
         this.addKeyListener (//4
             new KeyAdapter() {//3
                 public void keyPressed (KeyEvent evt) {//2 fs.add(new Txt(50, 50,255, 0, 0, "Haha"));
+			if (evt.getKeyChar() == 'a') {
+				if (save!=null){save.drag(-10,0);
+					repaint();  
+					}
+			    }
+			    if (evt.getKeyChar() == 'd') {
+				if (save!=null){
+					save.drag(10,0);
+					repaint();  }}
+			    if (evt.getKeyChar() == 'w') {
+				if (save!=null){
+					save.drag(0,-10);
+					repaint();  }}
+			    if (evt.getKeyChar() == 's') {
+				if (save!=null){
+					save.drag(0,10);
+					repaint();  }}
+
                     if (evt.getKeyChar() == 'r') {//1
                         int x = rand.nextInt(350);
                         int y = rand.nextInt(350);
@@ -88,13 +106,14 @@ if (evt.getKeyChar() == 'c') {//1
 	x=evt.getX();
 	y=evt.getY();
 	for (Figure fig: fs){
-		if(x>=fig.x && x<=fig.x + fig.w &&  y>=fig.y && y<=fig.y + fig.h){
+		if(x>=fig.x && x<=fig.x + fig.w &&  y>=fig.y && y<=fig.y + fig.h ){
 		save=fig;
 		z=1;
 		}
 	if(z==1){save.local(); z=0;}
 	}
 }
+
 
 
         this.setTitle("Lista Figuras");
