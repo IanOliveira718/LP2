@@ -113,7 +113,7 @@ if (evt.getKeyChar() == 'c') {//1
 	if(z==1){save.local(); z=0;}
 	}
 }
-
+);
 
 
         this.setTitle("Lista Figuras");
