@@ -35,5 +35,28 @@ public void local(){
 		this.x=this.x+x;
 		this.y=this.y+y;
 	}
-
+	public  void mdrag(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+    public boolean VerP(int x,int y, Figure f){
+        if (x >= f.x && x <= f.x + f.w && y >= f.y && y <= f.y + f.h){
+            return true;
+        }
+        return false;
+	}
+    public void psize(int h, int w){
+        this.h= this.h+h;
+        this.w= this.w+w;
+     }
+     public void changeC(int r, int g, int b){
+        if(this.r+r<255){ this.r=this.r+r;}
+        if(this.g+g<255){this.g=this.g+g;}
+        if(this.b+b<255){this.b=this.b+b;}
+    }
+    public void changeCi(int r, int g, int b){
+        if(this.ir+r<255){ this.ir=this.ir+r;}
+        if(this.ig+g<255){this.ig=this.ig+g;}
+        if(this.ib+b<255){this.ib=this.ib+b;}
+    }
 }
