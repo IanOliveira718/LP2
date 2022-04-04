@@ -16,7 +16,8 @@ class ListFrame extends JFrame {
     ArrayList<Figure> fs = new ArrayList<Figure>();
     Random rand = new Random();
     Figure save=null;
-    int x,y,z;
+    Figure save2=null;
+    int x,y,z,i;
 
 
     ListFrame () {
@@ -29,9 +30,90 @@ class ListFrame extends JFrame {
             }
         );
 
-        this.addKeyListener (//4
-            new KeyAdapter() {//3
-                public void keyPressed (KeyEvent evt) {//2 fs.add(new Txt(50, 50,255, 0, 0, "Haha"));
+        this.addKeyListener (
+            new KeyAdapter() {
+                public void keyPressed (KeyEvent evt) {
+			
+			if (evt.getKeyChar() == '7') {
+                            if (save != null) {
+                                save.changeCi(10,0, 0);
+                                repaint();
+                            }
+                        }if (evt.getKeyChar() == '4') {
+                            if (save != null) {
+                                save.changeCi(-10,0, 0);
+                                repaint();
+                            }
+                        }
+                        if (evt.getKeyChar() == '8') {
+                            if (save != null) {
+                                save.changeCi(0,10, 0);
+                                repaint();
+                            }
+                        }if (evt.getKeyChar() == '5') {
+                            if (save != null) {
+                                save.changeCi(0,-10, 0);
+                                repaint();
+                            }
+                        }
+                        if (evt.getKeyChar() == '9') {
+                            if (save != null) {
+                                save.changeCi(0,0,10);
+                                repaint();
+                            }
+                        }if (evt.getKeyChar() == '6') {
+                            if (save != null) {
+                                save.changeCi(0,0,-10);
+                                repaint();
+                            }
+                        }
+                        if (evt.getKeyChar() == 'a') {
+                            if (save != null) {
+                                save.drag(-10, 0);
+                                repaint();
+                            }
+                        }
+                        if (evt.getKeyChar() == 'd') {
+                            if (save != null) {
+                                save.drag(10, 0);
+                                repaint();
+                            }
+                        }
+                        if (evt.getKeyChar() == 'w') {
+                            if (save != null) {
+                                save.drag(0, -10);
+                                repaint();
+                            }
+                        }
+                        if (evt.getKeyChar() == 's') {
+                            if (save != null) {
+                                save.drag(0, 10);
+                                repaint();
+                            }
+                        }
+                        
+                        if (evt.getKeyChar() == '+') {
+                            if (save != null) {
+                                save.psize(10, 10);
+                                repaint();
+                            }
+                        }
+
+                        if (evt.getKeyChar() == '-') {
+                            if (save != null) {
+                                save.psize(-10, -10);
+                                repaint();
+                            }
+                        }
+
+                        if(evt.getKeyChar() == 'l') {
+                            if (save != null) {
+                                save=null;
+                                fs.remove(i);
+                                repaint();
+                            }
+                        }
+			
 			if (evt.getKeyChar() == 'a') {
 				if (save!=null){save.drag(-10,0);
 					repaint();  
@@ -50,7 +132,7 @@ class ListFrame extends JFrame {
 					save.drag(0,10);
 					repaint();  }}
 
-                    if (evt.getKeyChar() == 'r') {//1
+                    if (evt.getKeyChar() == 'r') {
                         int x = rand.nextInt(350);
                         int y = rand.nextInt(350);
                         int w = rand.nextInt(50);
@@ -62,10 +144,10 @@ class ListFrame extends JFrame {
 				  int ig = rand.nextInt(255);
 				  int ib = rand.nextInt(255);
                         fs.add(new Rect(x, y, w, h,r, g, b, ir, ig, ib));
-                        repaint();  // outer.repaint()
-                    }//1
+                        repaint();
+                    }
 			    
-                    if (evt.getKeyChar() == 'e') {//1
+                    if (evt.getKeyChar() == 'e') {
                         int x = rand.nextInt(350);
                         int y = rand.nextInt(350);
                         int w = rand.nextInt(50);
@@ -78,8 +160,8 @@ class ListFrame extends JFrame {
 				  int ib = rand.nextInt(255);
                         fs.add(new Ellipse(x, y, w, h,r, g, b, ir, ig, ib));
                         repaint(); 
-                    }//1
-if (evt.getKeyChar() == 'c') {//1
+                    }
+		   if (evt.getKeyChar() == 'c') {
                         int x = rand.nextInt(350);
                         int y = rand.nextInt(350);
                         int cx = rand.nextInt(350);
@@ -90,33 +172,71 @@ if (evt.getKeyChar() == 'c') {//1
 				  int x2 = rand.nextInt(350);
 				  int y2 = rand.nextInt(350);
 				  
-                        fs.add(new Quadcurve(x, y, cx, cy, x2, y2, r, g, b));
+                        fs.add(new Circle(x, y, cx, cy, x2, y2, r, g, b));
                         repaint();
-                    }//1
+                    }
+		  if (evt.getKeyChar() == 't') {
+                            int x = rand.nextInt(350);
+                            int y = rand.nextInt(350);
+                            int w = rand.nextInt(50);
+                            int h = rand.nextInt(50);
+                            int r = rand.nextInt(255);
+                            int g = rand.nextInt(255);
+                            int b = rand.nextInt(255);
+                            int ir = rand.nextInt(255);
+                            int ig = rand.nextInt(255);
+                            int ib = rand.nextInt(255);
+                            fs.add(new Trian(x, y, w, h, r, g, b, ir, ig, ib));
+                            repaint(); 
+                        }
 
-
-                }//2
-            }//3
-        );//4
-
+                }
+            }
+        );
 this.addMouseListener(
-	new MouseAdapter(){//1
-		public void  mousePressed (MouseEvent evt){//2
-	save=null;
-	x=evt.getX();
-	y=evt.getY();
-	for (Figure fig: fs){//3
-		if(x>=fig.x && x<=fig.x + fig.w &&  y>=fig.y && y<=fig.y + fig.h ){//4
-		save=fig;
-		z=1;
-		}//4
-	if(z==1){save.local(); z=0;}
-	}//3
-}//2
+                new MouseAdapter() {
+                    public void mousePressed(MouseEvent evt) {
+                        save = null;
+                        x = evt.getX();
+                        y = evt.getY();
+                        for (Figure fig : fs) {
+                            if (fig.VerP(x,y,fig)) {
+                                save = fig;
+                                i=fs.indexOf(fig);
+                                fs.remove(i);
+                                fs.add(save);
+                                z = 1;
+                            }
+                            if (z == 1) {
+                                save.local();
+                                repaint();
+                                z = 0;
+                            }
+                        }
+                    }
 
-		}//1
-	);
+                });
 
+        this.addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseDragged(MouseEvent e) {
+
+                save2 = null;
+            
+                System.out.format("%d %d ",x,y);
+
+                for (Figure fig : fs) {
+                    if (fig.VerP(e.getX(),e.getY(),fig)) {
+                        save2 = fig;
+                        z=1;
+                    }  
+                }
+                if(z==1){
+                    z=0;
+                    save2.mdrag(e.getX()-(save2.w)/2,e.getY()-(save2.h)/2);
+                    repaint();
+                }
+            }
+        });
 
 
         this.setTitle("Lista Figuras");
