@@ -19,13 +19,11 @@ class ListFrame extends JFrame {
     Figure save2=null;
     int x,y,z,i;
 
-
     ListFrame () {
         this.addWindowListener (
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
-                    System.exit(0);
-		    
+                    System.exit(0);	    
 			                    }
             }
         );
@@ -113,24 +111,6 @@ class ListFrame extends JFrame {
                                 repaint();
                             }
                         }
-			
-			if (evt.getKeyChar() == 'a') {
-				if (save!=null){save.drag(-10,0);
-					repaint();  
-					}
-			    }
-			    if (evt.getKeyChar() == 'd') {
-				if (save!=null){
-					save.drag(10,0);
-					repaint();  }}
-			    if (evt.getKeyChar() == 'w') {
-				if (save!=null){
-					save.drag(0,-10);
-					repaint();  }}
-			    if (evt.getKeyChar() == 's') {
-				if (save!=null){
-					save.drag(0,10);
-					repaint();  }}
 
                     if (evt.getKeyChar() == 'r') {
                         int x = rand.nextInt(350);
@@ -242,7 +222,6 @@ this.addMouseListener(
         this.setTitle("Lista Figuras");
         this.setSize(350, 350);
     }
-
 
     public void paint (Graphics g) {
         super.paint(g);
