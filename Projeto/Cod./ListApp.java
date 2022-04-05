@@ -204,9 +204,6 @@ this.addMouseListener(
             public void mouseDragged(MouseEvent e) {
 
                 save2 = null;
-            
-                System.out.format("%d %d ",x,y);
-
                 for (Figure fig : fs) {
                     if (fig.VerP(e.getX(),e.getY(),fig)) {
                         save2 = fig;
