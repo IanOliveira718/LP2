@@ -184,15 +184,17 @@ this.addMouseListener(
                             if (fig.VerP(x,y,fig)) {
                                 save = fig;
                                 i=fs.indexOf(fig);
-                                fs.remove(i);
-                                fs.add(save);
                                 z = 1;
                             }
-                            if (z == 1) {
-                                save.local();
-                                repaint();
-                                z = 0;
-                            }
+                        }
+                        if (save!=null) {
+                            fs.remove(i);
+                            fs.add(save);
+                        }
+                        if (z == 1) {
+                            save.local();
+                            repaint();
+                            z = 0;
                         }
                     }
 
