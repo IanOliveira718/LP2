@@ -142,17 +142,18 @@ class ListFrame extends JFrame {
                         repaint(); 
                     }
 		   if (evt.getKeyChar() == 'c') {
-                        int x = rand.nextInt(350);
-                        int y = rand.nextInt(350);
-                        int cx = rand.nextInt(350);
-                        int cy = rand.nextInt(350);
-				  int r = rand.nextInt(255);
-				  int g = rand.nextInt(255);
-				  int b = rand.nextInt(255);
-				  int x2 = rand.nextInt(350);
-				  int y2 = rand.nextInt(350);
+                            int x = rand.nextInt(350);
+                            int y = rand.nextInt(350);
+                            int w = rand.nextInt(50);
+                            int h = rand.nextInt(50);
+                            int r = rand.nextInt(255);
+                            int g = rand.nextInt(255);
+                            int b = rand.nextInt(255);
+                            int ir = rand.nextInt(255);
+                            int ig = rand.nextInt(255);
+                            int ib = rand.nextInt(255);
 				  
-                        fs.add(new Circle(x, y, cx, cy, x2, y2, r, g, b));
+                        fs.add(new Circle(x, y, w, h, r, g, b, ir, ig, ib));
                         repaint();
                     }
 		  if (evt.getKeyChar() == 't') {
