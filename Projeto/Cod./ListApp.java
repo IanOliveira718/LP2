@@ -190,6 +190,11 @@ this.addMouseListener(
                         if (save!=null) {
                             fs.remove(i);
                             fs.add(save);
+			    for (Figure fig : fs) {
+                                if(fig==save){
+                                    i=fs.indexOf(fig);
+                                }
+                            }
                         }
                         if (z == 1) {
                             save.local();
