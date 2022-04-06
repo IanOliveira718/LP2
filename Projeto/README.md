@@ -20,12 +20,12 @@
 + Primeiro selecione o objeto com o mouse, daí
 + Aperte **+** para aumentar o objeto;
 + Aperte **-** para aumentar o objeto;
-+ Aperte **7** para aumentar o indice de cor vermelha;
-+ Aperte **4** para diminuir o indice de cor vermelha;
-+ Aperte **8** para aumentar o indice de cor verde;
-+ Aperte **5** para diminuir o indice de cor verde;
-+ Aperte **9** para aumentar o indice de cor azul;
-+ Aperte **6** para diminuir o indice de cor azul;
++ Aperte **7**(int.) ou **g**(ext.) para aumentar o indice de cor vermelha;
++ Aperte **4**(int.) ou **b**(ext.) para diminuir o indice de cor vermelha;
++ Aperte **8**(int.) ou **h**(ext.) para aumentar o indice de cor verde;
++ Aperte **5**(int.) ou **n**(ext.) para diminuir o indice de cor verde;
++ Aperte **9**(int.) ou **j**(ext.) para aumentar o indice de cor azul;
++ Aperte **6**(int.) ou **m**(ext.) para diminuir o indice de cor azul;
 
 #### Mover objeto:
 + Pode-se mover com o própio ponteiro ou selecione o obejeto e aperte
