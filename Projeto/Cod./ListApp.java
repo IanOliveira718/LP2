@@ -65,6 +65,42 @@ class ListFrame extends JFrame {
                                 repaint();
                             }
                         }
+			
+		        if (evt.getKeyChar() == 'g') {
+                            if (save != null) {
+                                save.changeC(10,0, 0);
+                                repaint();
+                            }
+                        }if (evt.getKeyChar() == 'b') {
+                            if (save != null) {
+                                save.changeC(-10,0, 0);
+                                repaint();
+                            }
+                        }
+                        if (evt.getKeyChar() == 'h') {
+                            if (save != null) {
+                                save.changeC(0,10, 0);
+                                repaint();
+                            }
+                        }if (evt.getKeyChar() == 'n') {
+                            if (save != null) {
+                                save.changeC(0,-10, 0);
+                                repaint();
+                            }
+                        }
+                        if (evt.getKeyChar() == 'j') {
+                            if (save != null) {
+                                save.changeC(0,0,10);
+                                repaint();
+                            }
+                        }if (evt.getKeyChar() == 'm') {
+                            if (save != null) {
+                                save.changeC(0,0,-10);
+                                repaint();
+                            }
+                        }
+			
+			
                         if (evt.getKeyChar() == 'a') {
                             if (save != null) {
                                 save.drag(-10, 0);
