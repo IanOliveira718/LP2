@@ -9,31 +9,31 @@
 + Ao final, para executar o app, basta executar o  _ListApp_ ;
 
 #### Criar, deletar ou focar um objeto:
-+ Aperte **r** para criar um retângulo
-+ Aperte **e** para criar uma ellipse
-+ Aperte **c** para criar uma circulo
-+ Aperte **t** para criar uma triangulo
++ Aperte **R** para criar um retângulo
++ Aperte **E** para criar uma ellipse
++ Aperte **C** para criar uma circulo
++ Aperte **T** para criar uma triangulo
 + Para excluir primeiro selecione o objeto com o mouse
 + Aperte **L** para deletar um objeto
-+ Precione **f** para alternar o foco para excluir ou manipular demais objetos 
++ Precione **F** para alternar o foco para excluir ou manipular demais objetos 
 
 #### Mudar a cor do objeto ou tamanho:
 + Primeiro selecione o objeto com o mouse, daí
 + Aperte **+** para aumentar o objeto;
 + Aperte **-** para aumentar o objeto;
-+ Aperte **7**(interior) ou **g**(ext.) para aumentar o indice de cor vermelha;
-+ Aperte **4**(interior) ou **b**(ext.) para diminuir o indice de cor vermelha;
-+ Aperte **8**(interior) ou **h**(ext.) para aumentar o indice de cor verde;
-+ Aperte **5**(interior) ou **n**(ext.) para diminuir o indice de cor verde;
-+ Aperte **9**(interior) ou **j**(ext.) para aumentar o indice de cor azul;
-+ Aperte **6**(interior) ou **m**(ext.) para diminuir o indice de cor azul;
++ Aperte **7**(interior) ou **G**(ext.) para aumentar o indice de cor vermelha;
++ Aperte **4**(interior) ou **B**(ext.) para diminuir o indice de cor vermelha;
++ Aperte **8**(interior) ou **H**(ext.) para aumentar o indice de cor verde;
++ Aperte **5**(interior) ou **N**(ext.) para diminuir o indice de cor verde;
++ Aperte **9**(interior) ou **J**(ext.) para aumentar o indice de cor azul;
++ Aperte **6**(interior) ou **M**(ext.) para diminuir o indice de cor azul;
 
 #### Mover objeto:
 + Pode-se mover com o própio ponteiro ou selecione o obejeto e aperte
-+ Aperte **w** para o objeto mover para cima
-+ Aperte **s** para o objeto mover para baixo
-+ Aperte **a** para o objeto mover para esquerda
-+ Aperte **d** para o objeto mover para direita
++ Aperte **W** para o objeto mover para cima
++ Aperte **S** para o objeto mover para baixo
++ Aperte **A** para o objeto mover para esquerda
++ Aperte **D** para o objeto mover para direita
 
 #### Saber posição e especificação do objeto:
 + Basta clicar no objeto desejado e verificar no cmd
