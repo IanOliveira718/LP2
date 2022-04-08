@@ -136,7 +136,7 @@ class ListFrame extends JFrame {
                                 save=null;
                                 fs.remove(i);
                                 repaint();
-				k=k-1
+				k=k-1;
                             }
                         }
 			
