@@ -19,8 +19,7 @@
 
 #### Mudar a cor do objeto ou tamanho:
 + Primeiro selecione o objeto com o mouse, daí
-+ Aperte **+** para aumentar o objeto;
-+ Aperte **-** para aumentar o objeto;
++ Precione com o mouse no canto inferior direito,no quadrado branco e ajuste até o tamanho desejado;
 + Aperte **7**(interior) ou **G**(ext.) para aumentar o indice de cor vermelha;
 + Aperte **4**(interior) ou **B**(ext.) para diminuir o indice de cor vermelha;
 + Aperte **8**(interior) ou **H**(ext.) para aumentar o indice de cor verde;
