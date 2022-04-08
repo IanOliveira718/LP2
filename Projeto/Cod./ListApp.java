@@ -152,24 +152,15 @@ class ListFrame extends JFrame {
                                     save.foco=false;
                                 } 
                                 save = fs.get(i);
+                                
+                                fs.remove(i);
+                                save.foco=true;
+                                fs.add(save);
                                 for (Figure fig : fs) {
-                                    if (fig.VerP(x,y,fig)) {
-                                        save = fig;
-                                        i=fs.indexOf(fig);
-                                        z = 1;
-                                    }
-                                }
-                                if (save!=null) {
-                                    fs.remove(i);
-                                    save.foco=true;
-                                    fs.add(save);
-                                    for (Figure fig : fs) {
-                                        if(fig==save){
+                                	if(fig==save){
                                             i=fs.indexOf(fig);
                                         }
-                                    }
-                                }
-                                save.foco=true;
+                                    } 
                                 repaint();                           
                             }
                         }
@@ -183,7 +174,7 @@ class ListFrame extends JFrame {
 			int ir = rand.nextInt(255);
 			int ig = rand.nextInt(255);
 			int ib = rand.nextInt(255);
-                        fs.add(new Rect(x, y, w, h,r, g, b, ir, ig, ib,false));
+                        fs.add(new Rect(x-w/2, y-h/2, w, h,r, g, b, ir, ig, ib,false));
 			k=k+1;
                         repaint();
                     }
@@ -197,7 +188,7 @@ class ListFrame extends JFrame {
 			int ir = rand.nextInt(255);
 			int ig = rand.nextInt(255);
 			int ib = rand.nextInt(255);
-                        fs.add(new Ellipse(x, y, w, h,r, g, b, ir, ig, ib,false));
+                        fs.add(new Ellipse(x-w/2, y-h/2, w, h,r, g, b, ir, ig, ib,false));
 			k=k+1;
                         repaint(); 
                     }
@@ -211,7 +202,7 @@ class ListFrame extends JFrame {
                             int ig = rand.nextInt(255);
                             int ib = rand.nextInt(255);
 				  
-                        fs.add(new Circle(x, y, w, h, r, g, b, ir, ig, ib,false));
+                        fs.add(new Circle(x-w/2, y-h/2, w, h, r, g, b, ir, ig, ib,false));
 			k=k+1;   
                         repaint();
                     }
@@ -224,7 +215,7 @@ class ListFrame extends JFrame {
                             int ir = rand.nextInt(255);
                             int ig = rand.nextInt(255);
                             int ib = rand.nextInt(255);
-                            fs.add(new Trian(x, y, w, h, r, g, b, ir, ig, ib,false));
+                            fs.add(new Trian(x-w/2, y-h/2, w, h, r, g, b, ir, ig, ib,false));
 			    k=k+1;
                             repaint(); 
                         }
