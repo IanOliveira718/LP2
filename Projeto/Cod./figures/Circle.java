@@ -47,13 +47,45 @@ public class Circle extends Figure {
         this.w= this.w+w;
      }
      public void changeC(int r, int g, int b){
-        if(this.r+r<255){ this.r=this.r+r;}
-        if(this.g+g<255){this.g=this.g+g;}
-        if(this.b+b<255){this.b=this.b+b;}
+        if(this.r+r<255){ 
+            if(this.r+r<0){ this.r=0;}
+            else{this.r=this.r+r;}
+            
+        }
+        else{ this.r=255;}
+
+        if(this.g+g<255){
+            if(this.g+g<0){this.g=0;}
+            else{this.g=this.g+g;}
+        }
+        else{this.g=255;}
+
+        if(this.b+b<255){
+            if(this.b+b<0){this.b=0;}
+            else{this.b=this.b+b;}
+        }
+        else{this.b=255;}
+        
     }
     public void changeCi(int r, int g, int b){
-        if(this.ir+r<255){ this.ir=this.ir+r;}
-        if(this.ig+g<255){this.ig=this.ig+g;}
-        if(this.ib+b<255){this.ib=this.ib+b;}
+
+        if(this.ir+r<255){ 
+            if(this.ir+r<0){ this.ir=0;}
+            else{this.ir=this.ir+r;}
+            
+        }
+        else{ this.ir=255;}
+
+        if(this.ig+g<255){
+            if(this.ig+g<0){this.ig=0;}
+            else{this.ig=this.ig+g;}
+        }
+        else{this.ig=255;}
+
+        if(this.ib+b<255){
+            if(this.ib+b<0){this.ib=0;}
+            else{this.ib=this.ib+b;}
+        }
+        else{this.ib=255;}
     }
 }
