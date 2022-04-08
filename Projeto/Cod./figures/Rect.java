@@ -21,17 +21,18 @@ public class Rect extends Figure  {
     }
 
     public void paint (Graphics g) {
-	if(foco){
-            g.setColor(new Color(0, 0, 0));
-            g.drawRect(this.x-1, this.y-1, this.w+2, this.h+2);
-            g.setColor(new Color(0, 0, 0));
-            g.fillRect(this.x-1+this.w+2, this.y-1+ this.h+2, 7, 7);
-        }
+
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(new Color(this.r,this.g,this.b));
         g.drawRect(this.x,this.y, this.w,this.h);
 	g.setColor(new Color(this.ir,this.ig,this.ib));
 	g.fillRect(this.x,this.y, this.w,this.h);
+	if(foco){
+            g.setColor(new Color(0, 0, 0));
+            g.drawRect(this.x-1, this.y-1, this.w+2, this.h+2);
+            g.setColor(new Color(0, 0, 0));
+            g.fillRect(this.x+this.w, this.y+ this.h, -7, -7);
+        }
 
     }
 	public void local(){
@@ -51,9 +52,9 @@ public class Rect extends Figure  {
         }
         return false;
 	}
-    public void psize(int h, int w){
-        this.h= this.h+h;
-        this.w= this.w+w;
+    public void psize(int w, int h){
+        this.h = h;
+        this.w = w;
      }
      public void changeC(int r, int g, int b){
         if(this.r+r<255){ 
