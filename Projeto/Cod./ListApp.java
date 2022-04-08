@@ -18,7 +18,8 @@ class ListFrame extends JFrame {
     Figure save=null;
     Figure save2=null;
     Figure save = null;
-    Figure save2 = null;
+    Figure save2 = null; 
+    boolean b=false;
     int x=350/2;
     int y=350/2;
     int z;
@@ -132,20 +133,6 @@ class ListFrame extends JFrame {
                             }
                         }
                         
-                        if (evt.getKeyChar() == '+') {
-                            if (save != null) {
-                                save.psize(10, 10);
-                                repaint();
-                            }
-                        }
-
-                        if (evt.getKeyChar() == '-') {
-                            if (save != null) {
-                                save.psize(-10, -10);
-                                repaint();
-                            }
-                        }
-
                         if(evt.getKeyChar() == 'l') {
                             if (save != null) {
                                 save=null;
@@ -247,63 +234,80 @@ class ListFrame extends JFrame {
             }
         );
 
-this.addMouseListener(
-                new MouseAdapter() {
-                    public void mousePressed(MouseEvent evt) {
-                        if(save!=null){
-                            save.foco=false;
-                            repaint();
+		this.addMouseListener(
+                	new MouseAdapter() {
+                    	public void mousePressed(MouseEvent evt) {
+                        	if(save!=null){
+                            		if(evt.getX()<=save.x+save.w && evt.getX()>=save.x+save.w-7 && evt.getY()<= save.y+ save.h && evt.getY()>= save.y+ save.h-7){
+                                	b=true; System.out.format("foi");
+                            	}
+                            	else{
+                               		b=false;
+                                	save.foco=false;
+                                	repaint();
+                            	}
                         }
-                        save = null;
-                        x = evt.getX();
-                        y = evt.getY();
-                        for (Figure fig : fs) {
-                            if (fig.VerP(x,y,fig)) {
-                                save = fig;
-                                i=fs.indexOf(fig);
-                                z = 1;
-                            }
-                        }
-                        if (save!=null) {
-                            fs.remove(i);
-                            save.foco=true;
-                            fs.add(save);
+                        if(b!=true){
+                            save = null;
+                            x = evt.getX();
+                            y = evt.getY();
                             for (Figure fig : fs) {
-                                if(fig==save){
+                                if (fig.VerP(x,y,fig)) {
+                                    save = fig;
                                     i=fs.indexOf(fig);
+                                    z = 1;
                                 }
                             }
-                        }
-                        if (z == 1) {
-                            save.local();
-                            repaint();
-                            z = 0;
+                            if (save!=null) {
+                                fs.remove(i);
+                                save.foco=true;
+                                fs.add(save);
+                                for (Figure fig : fs) {
+                                    if(fig==save){
+                                    i=fs.indexOf(fig);
+                                    }
+                                }
+                            }
+                            if (z == 1) {
+                                save.local();
+                                repaint();
+                                z = 0;
+                            }
                         }
                     }
                 });
 
-        this.addMouseMotionListener(new MouseMotionAdapter() {
-            public void mouseMoved(MouseEvent e) {
-                x=e.getX();
-                y=e.getY();
-             }
-            public void mouseDragged(MouseEvent e) {
-		    
-                save2 = null;
-                for (Figure fig : fs) {
-                    if (fig.VerP(e.getX(),e.getY(),fig)) {
-                        save2 = fig;
-                        z=1; 
-                    }  
-                }
-                if(z==1){
-                    z=0;
-                    save2.mdrag(e.getX()-(save2.w)/2,e.getY()-(save2.h)/2);
+        	this.addMouseMotionListener(new MouseMotionAdapter() {
+            	public void mouseMoved(MouseEvent ev) {
+                	x=ev.getX();
+                	y=ev.getY();
+             	}
+            	public void mouseDragged(MouseEvent e) {
+                	if(b){
+                    	if(e.getX()-save.x>0 && e.getY()-save.y>0){
+                        	save.psize(e.getX()-save.x, e.getY()-save.y);
+                        	repaint();
+                    	}
+                    
+                	}
+                	else{
+                    	save2 = null;
+                    	System.out.format("%d %d ",x,y);
 
-                    repaint();
-                }
-            }
-        });
+                    	for (Figure fig : fs) {
+                        	if (fig.VerP(e.getX(),e.getY(),fig)) {
+                        	save2 = fig;
+                        	z=1; 
+                        	}  
+                   	 }
+                    	if(z==1){
+                        	z=0;
+                        	save2.mdrag(e.getX()-(save2.w)/2,e.getY()-(save2.h)/2);
+                        	repaint();
+                    			}
+                		}
+            		}
+        	});
 
         this.setTitle("Lista Figuras");
         this.setSize(350, 350);
