@@ -229,7 +229,7 @@ class ListFrame extends JFrame {
                     	public void mousePressed(MouseEvent evt) {
                         	if(save!=null){
                             		if(evt.getX()<=save.x+save.w && evt.getX()>=save.x+save.w-7 && evt.getY()<= save.y+ save.h && evt.getY()>= save.y+ save.h-7){
-                                	b=true; System.out.format("foi");
+                                	b=true;
                             	}
                             	else{
                                		b=false;
@@ -282,7 +282,7 @@ class ListFrame extends JFrame {
                 	}
                 	else{
                     	save2 = null;
-                    	System.out.format("%d %d ",x,y);
+                    	
 
                     	for (Figure fig : fs) {
                         	if (fig.VerP(e.getX(),e.getY(),fig)) {
