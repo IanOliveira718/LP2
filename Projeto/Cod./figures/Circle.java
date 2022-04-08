@@ -17,16 +17,17 @@ public class Circle extends Figure {
 	this.foco=foco;
     }
     public void paint(Graphics g) {
-	if(foco){
-            g.setColor(new Color(0, 0, 0));
-            g.drawRect(this.x-1, this.y-1, this.w+2, this.h+2);
-            g.setColor(new Color(0, 0, 0));
-            g.fillRect(this.x-1+this.w+2, this.y-1+ this.h+2, 7, 7);
-        }
+	
         g.setColor(new Color(this.r, this.g, this.b));
         g.drawArc(this.x, this.y, this.w, this.h,0,360);
         g.setColor(new Color(this.ir, this.ig, this.ib));
         g.fillArc(this.x, this.y, this.w, this.h,0,360);
+	if(foco){
+            g.setColor(new Color(0, 0, 0));
+            g.drawRect(this.x-1, this.y-1, this.w+2, this.h+2);
+            g.setColor(new Color(0, 0, 0));
+            g.fillRect(this.x+this.w, this.y+ this.h, -7, -7);
+        }
         
     }
 
@@ -49,10 +50,10 @@ public class Circle extends Figure {
         }
         return false;
 	}
-    public void psize(int h, int w){
-        this.h= this.h+h;
-        this.w= this.w+w;
-     }
+    public void psize(int w, int h){
+        this.h = h;
+        this.w = w;
+     	}
      public void changeC(int r, int g, int b){
         if(this.r+r<255){ 
             if(this.r+r<0){ this.r=0;}
