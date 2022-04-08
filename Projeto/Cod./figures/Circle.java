@@ -3,7 +3,7 @@ import java.awt.*;
 public class Circle extends Figure {
     int ir, ig, ib;
 
-    public Circle(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib) {
+    public Circle(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib, boolean foco) {
         this.x = x;
         this.y = y;
         this.w = w;
@@ -14,8 +14,15 @@ public class Circle extends Figure {
         this.ir = ir;
         this.ig = ig;
         this.ib = ib;
+	this.foco=foco;
     }
     public void paint(Graphics g) {
+	if(foco){
+            g.setColor(new Color(0, 0, 0));
+            g.drawRect(this.x-1, this.y-1, this.w+2, this.h+2);
+            g.setColor(new Color(0, 0, 0));
+            g.fillRect(this.x-1+this.w+2, this.y-1+ this.h+2, 7, 7);
+        }
         g.setColor(new Color(this.r, this.g, this.b));
         g.drawArc(this.x, this.y, this.w, this.h,0,360);
         g.setColor(new Color(this.ir, this.ig, this.ib));
