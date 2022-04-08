@@ -14,7 +14,7 @@
 + Aperte **c** para criar uma circulo
 + Aperte **t** para criar uma triangulo
 + Para excluir primeiro selecione o objeto com o mouse
-+ Aperte **l** para deletar um objeto
++ Aperte **L** para deletar um objeto
 + Precione **f** para alternar o foco para excluir ou manipular demais objetos 
 
 #### Mudar a cor do objeto ou tamanho:
