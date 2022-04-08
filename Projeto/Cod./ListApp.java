@@ -17,12 +17,10 @@ class ListFrame extends JFrame {
     Random rand = new Random();
     Figure save=null;
     Figure save2=null;
-    Figure save = null;
-    Figure save2 = null; 
     boolean b=false;
     int x=350/2;
     int y=350/2;
-    int z;
+    int z=0;
     int i=0;
     int k=0;
 
