@@ -280,7 +280,7 @@ class ListFrame extends JFrame {
                     	}
                     
                 	}
-                	else{
+                	if(b==false && save!=null){
                     	save2 = null;
                     	
 
