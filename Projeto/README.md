@@ -8,13 +8,14 @@
 + Basta compilar apenas o arquivo _ListApp.java_;
 + Ao final, para executar o app, basta executar o  _ListApp_ ;
 
-#### Criar ou deletar um objeto:
-+ Primeiro selecione o objeto com o mouse, daí
+#### Criar, deletar ou focar um objeto:
 + Aperte **r** para criar um retângulo
 + Aperte **e** para criar uma ellipse
 + Aperte **c** para criar uma circulo
 + Aperte **t** para criar uma triangulo
-+ Selecione um objeto e aperte **l** para deletar um objeto
++ Para excluir primeiro selecione o objeto com o mouse
++ Aperte **l** para deletar um objeto
++ Precione **f** para alternar o foco para excluir ou manipular demais objetos 
 
 #### Mudar a cor do objeto ou tamanho:
 + Primeiro selecione o objeto com o mouse, daí
