@@ -242,7 +242,7 @@ class ListFrame extends JFrame {
                             x = evt.getX();
                             y = evt.getY();
                             for (Figure fig : fs) {
-                                if (fig.VerP(x,y,fig)) {
+                                if (fig.clicked(x,y)) {
                                     save = fig;
                                     i=fs.indexOf(fig);
                                     z = 1;
@@ -285,7 +285,7 @@ class ListFrame extends JFrame {
                     	
 
                     	for (Figure fig : fs) {
-                        	if (fig.VerP(e.getX(),e.getY(),fig)) {
+                        	if (fig.clicked(e.getX(),e.getY())) {
                         	save2 = fig;
                         	z=1; 
                         	}  
