@@ -1,5 +1,7 @@
 package figures;
 
+import ivisible.iVisible;
+
 public abstract class Figure{
    public int x, y,w,h;
    public int r,g,b;
