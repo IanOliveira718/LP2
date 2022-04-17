@@ -46,12 +46,8 @@ public void local(){
         this.x=x;
         this.y=y;
     }
-    public boolean VerP(int x,int y, Figure f){
-        if (x >= f.x && x <= f.x + f.w && y >= f.y && y <= f.y + f.h){
-            return true;
-        }
-        return false;
-	}
+    
+	
      public void psize(int w, int h){
         this.h = h;
         this.w = w;
