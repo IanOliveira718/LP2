@@ -1,7 +1,7 @@
 package figures;
 import java.awt.*;
 public class Trian extends Figure {
-    int ir,ig,ib;
+    private int ir,ig,ib;
     public Trian(int x, int y, int w, int h, int r,int g,int b, int ir,int ig,int ib,boolean foco){
         this.x = x;
         this.y = y;
