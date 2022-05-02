@@ -7,11 +7,11 @@ typedef struct Rect{
 } Rect;
 
 Rect* rect_new (void) {
-    Rect*   this  = malloc(sizeof(Rect));
-    this->x = 10;
-    this->y = 10;
-    this->w = 100;
-    this->h = 100;
+    Rect*   r  = (Rect*)malloc(sizeof(Rect));
+    r->x = 10;
+    r->y = 10;
+    r->w = 100;
+    r->h = 100;
 }
 
 void rect_print (Rect* this) {
