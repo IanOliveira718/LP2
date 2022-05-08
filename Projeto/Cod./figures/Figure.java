@@ -3,9 +3,10 @@ package figures;
 import ivisible.iVisible;
 
 public abstract class Figure{
-   public int x, y,w,h;
+   protected int x, y,w,h;
    protected int r,g,b;
-   public boolean foco; 
+   protected boolean foco;
+   
    public abstract void local();
    public abstract void drag(int x,int y);
    public abstract void mdrag(int x, int y);
