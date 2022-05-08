@@ -149,12 +149,12 @@ class ListFrame extends JFrame {
                                     i=i+1;
                                 }
                                 if(save!=null){
-                                    save.foco=false;
+                                    save.setf(false);
                                 } 
                                 save = fs.get(i);
                                 
                                 fs.remove(i);
-                                save.foco=true;
+                                save.setf(true);
                                 fs.add(save);
                                 for (Figure fig : fs) {
                                 	if(fig==save){
@@ -228,12 +228,12 @@ class ListFrame extends JFrame {
                 	new MouseAdapter() {
                     	public void mousePressed(MouseEvent evt) {
                         	if(save!=null){
-                            		if(evt.getX()<=save.x+save.w && evt.getX()>=save.x+save.w-7 && evt.getY()<= save.y+ save.h && evt.getY()>= save.y+ save.h-7){
+                            		if(save.clickdrag(evt.getX(),evt.getY())){
                                 	b=true;
                             	}
                             	else{
                                		b=false;
-                                	save.foco=false;
+                                	save.setf(false);
                                 	repaint();
                             	}
                         }
@@ -250,7 +250,7 @@ class ListFrame extends JFrame {
                             }
                             if (save!=null) {
                                 fs.remove(i);
-                                save.foco=true;
+                                save.setf(true);
                                 fs.add(save);
                                 for (Figure fig : fs) {
                                     if(fig==save){
@@ -274,8 +274,8 @@ class ListFrame extends JFrame {
              	}
             	public void mouseDragged(MouseEvent e) {
                 	if(b){
-                    	if(e.getX()-save.x>0 && e.getY()-save.y>0){
-                        	save.psize(e.getX()-save.x, e.getY()-save.y);
+                    	if(e.getX()-save.getx()>0 && e.getY()-save.gety()>0){
+                        	save.psize(e.getX()-save.getx(), e.getY()-save.gety());
                         	repaint();
                     	}
                     
@@ -292,7 +292,7 @@ class ListFrame extends JFrame {
                    	 }
                     	if(z==1){
                         	z=0;
-                        	save2.mdrag(e.getX()-(save2.w)/2,e.getY()-(save2.h)/2);
+                        	save2.mdrag(e.getX(),e.getY());
                         	repaint();
                     			}
                 		}
