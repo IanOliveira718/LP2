@@ -43,8 +43,8 @@ public void local(){
 		this.y=this.y+y;
 	}
 	public  void mdrag(int x, int y){
-        this.x=x;
-        this.y=y;
+        this.x=x-(this.w)/2;
+        this.y=y-(this.h)/2;
     }
     
 	
