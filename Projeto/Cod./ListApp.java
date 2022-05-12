@@ -25,9 +25,26 @@ class ListFrame extends JFrame {
     int k=0;
 
     ListFrame () {
+	    
+	    FileInputStream f = new FileInputStream("proj.bin");
+            ObjectInputStream o =new ObjectInputStream(f);
+            this.fs = (ArrayList<Figure>) o.readObject();
+            o.close();
+            k=fs.size();
+
+            }catch(Exception x){
+                System.out.println("Erro!");}
+	
         this.addWindowListener (
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
+			
+			FileOutputStream f = new FileOutputStream("proj.bin");
+                        ObjectOutputStream o =new ObjectOutputStream(f);
+                        o.writeObject(fs);
+                        o.flush();
+                        o.close();
+			
                     System.exit(0);	    
 			                    }
             }
