@@ -1,6 +1,7 @@
 import figures.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -11,7 +12,7 @@ class ListApp {
         frame.setVisible(true);
     }
 }
-
+@SuppressWarnings("unchecked")
 class ListFrame extends JFrame {
     ArrayList<Figure> fs = new ArrayList<Figure>();
     Random rand = new Random();
