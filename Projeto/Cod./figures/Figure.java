@@ -2,7 +2,7 @@ package figures;
 
 import ivisible.iVisible;
 
-public abstract class Figure{
+public abstract class Figure implements iVisible,Serializable{
    protected int x, y,w,h;
    protected int r,g,b;
    protected boolean foco;
