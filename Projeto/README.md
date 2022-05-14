@@ -38,7 +38,7 @@
 + Aperte **6**(interior) ou **M**(ext.) para diminuir o indice de cor azul;
 
 #### Mover objeto:
-+ Pode-se mover com o própio ponteiro ou selecione o obejeto e aperte
++ Pode-se mover com o própio ponteiro ou selecione o objeto e aperte
 + Aperte **W** para o objeto mover para cima
 + Aperte **S** para o objeto mover para baixo
 + Aperte **A** para o objeto mover para esquerda
