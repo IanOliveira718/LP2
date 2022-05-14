@@ -8,6 +8,16 @@
 + Basta compilar apenas o arquivo _ListApp.java_;
 + Ao final, para executar o app, basta executar o  _ListApp_ ;
 
+#### Barra de ferramentas:
++ Para criar um objeto desejado, clique nele e 
+  em seguida clique em qualquer região do painel.
+  Caso aperte novamente em outra figura, 
+  não será criada sua figura, apenas trocada a opção.
++ A opção **ERASE** irá ter ação apenas se uma figura 
+  estiver em foco.
++ A opção **CLEAN** irá remover todas as figuras criadas.
+
+
 #### Criar, deletar ou focar um objeto:
 + Aperte **R** para criar um retângulo
 + Aperte **E** para criar uma ellipse
