@@ -5,6 +5,9 @@ import java.io.*;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Random;
+import button.Button;
+import buttonextra.Button2;
+
 
 class ListApp {
     public static void main (String[] args) {
@@ -15,9 +18,14 @@ class ListApp {
 @SuppressWarnings("unchecked")
 class ListFrame extends JFrame {
     ArrayList<Figure> fs = new ArrayList<Figure>();
+    ArrayList<Button> fb = new ArrayList<Button>();
+    ArrayList<Button2> fb2 = new ArrayList<Button2>();
     Random rand = new Random();
     Figure save=null;
     Figure save2=null;
+    Button auxb=null;
+    Button2 auxb2=null;
+ 
     boolean b=false;
     int x=350/2;
     int y=350/2;
@@ -26,6 +34,14 @@ class ListFrame extends JFrame {
     int k=0;
 
     ListFrame () {
+        fb.add(new Button(1, new Rect(1, 2, 3, 4, 0, 0, 0, 0, 0, 0, false)));
+        fb.add(new Button(2, new Circle(1, 2, 3, 4, 0, 0, 0,0, 0, 0, false)));
+        fb.add(new Button(3, new Ellipse(1, 2, 3, 1, 0, 0, 0,0, 0, 0, false)));
+        fb.add(new Button(4, new Trian(1, 2, 3, 4, 0, 0, 0, 0, 0, 0, false)));
+        fb2.add(new Button2(5, "Erase"));
+        fb2.add(new Button2(6, "Clean"));
+
+        repaint();
 	    try{
             FileInputStream f = new FileInputStream("proj.bin");
             ObjectInputStream o =new ObjectInputStream(f);
@@ -42,12 +58,12 @@ class ListFrame extends JFrame {
                 public void windowClosing (WindowEvent e) {
 			
 			try{
-                            FileOutputStream f = new FileOutputStream("proj.bin");
-                            ObjectOutputStream o =new ObjectOutputStream(f);
-                            o.writeObject(fs);
-                            o.flush();
-                            o.close();
-                        }catch(Exception x){}
+                FileOutputStream f = new FileOutputStream("proj.bin");
+                ObjectOutputStream o =new ObjectOutputStream(f);
+                o.writeObject(fs);
+                o.flush();
+                o.close();
+                }catch(Exception x){}
 			
                     System.exit(0);	    
 			                    }
@@ -90,9 +106,7 @@ class ListFrame extends JFrame {
                                 save.changeCi(0,0,-10);
                                 repaint();
                             }
-                        }
-			
-		        if (evt.getKeyChar() == 'g') {
+                        }if (evt.getKeyChar() == 'g') {
                             if (save != null) {
                                 save.changeC(10,0, 0);
                                 repaint();
@@ -157,7 +171,7 @@ class ListFrame extends JFrame {
                                 save=null;
                                 fs.remove(i);
                                 repaint();
-				k=k-1;
+				                k=k-1;
                             }
                         }
 			
@@ -169,13 +183,8 @@ class ListFrame extends JFrame {
                                 else{
                                     i=i+1;
                                 }
-                                if(save!=null){
-                                    save.setf(false);
-                                } 
                                 save = fs.get(i);
-                                
                                 fs.remove(i);
-                                save.setf(true);
                                 fs.add(save);
                                 for (Figure fig : fs) {
                                 	if(fig==save){
@@ -189,28 +198,28 @@ class ListFrame extends JFrame {
                     if (evt.getKeyChar() == 'r') {
                         int w = rand.nextInt(50);
                         int h = rand.nextInt(50);
-			int r = rand.nextInt(255);
-			int g = rand.nextInt(255);
-		 	int b = rand.nextInt(255);
-			int ir = rand.nextInt(255);
-			int ig = rand.nextInt(255);
-			int ib = rand.nextInt(255);
+			            int r = rand.nextInt(255);
+			            int g = rand.nextInt(255);
+		 	            int b = rand.nextInt(255);
+			            int ir = rand.nextInt(255);
+			            int ig = rand.nextInt(255);
+			            int ib = rand.nextInt(255);
                         fs.add(new Rect(x-w/2, y-h/2, w, h,r, g, b, ir, ig, ib,false));
-			k=k+1;
+			            k=k+1;
                         repaint();
                     }
 			    
                     if (evt.getKeyChar() == 'e') {
                         int w = rand.nextInt(50);
                         int h = rand.nextInt(50);
-			int r = rand.nextInt(255);
-			int g = rand.nextInt(255);
-			int b = rand.nextInt(255);
-			int ir = rand.nextInt(255);
-			int ig = rand.nextInt(255);
-			int ib = rand.nextInt(255);
+			            int r = rand.nextInt(255);
+			            int g = rand.nextInt(255);
+			            int b = rand.nextInt(255);
+			            int ir = rand.nextInt(255);
+			            int ig = rand.nextInt(255);
+			            int ib = rand.nextInt(255);
                         fs.add(new Ellipse(x-w/2, y-h/2, w, h,r, g, b, ir, ig, ib,false));
-			k=k+1;
+			            k=k+1;
                         repaint(); 
                     }
 		   if (evt.getKeyChar() == 'c') {
@@ -223,8 +232,8 @@ class ListFrame extends JFrame {
                             int ig = rand.nextInt(255);
                             int ib = rand.nextInt(255);
 				  
-                        fs.add(new Circle(x-w/2, y-h/2, w, h, r, g, b, ir, ig, ib,false));
-			k=k+1;   
+                        fs.add(new Circle(x-w/2, y-h/2, w, w, r, g, b, ir, ig, ib,false));
+			            k=k+1;   
                         repaint();
                     }
 		  if (evt.getKeyChar() == 't') {
@@ -248,30 +257,79 @@ class ListFrame extends JFrame {
 		this.addMouseListener(
                 	new MouseAdapter() {
                     	public void mousePressed(MouseEvent evt) {
-                        	if(save!=null){
-                            		if(save.clickdrag(evt.getX(),evt.getY())){
-                                	b=true;
-                            	}
-                            	else{
-                               		b=false;
-                                	save.setf(false);
-                                	repaint();
-                            	}
+                        if(save!=null){
+                            	if(save.clickdrag(evt.getX(),evt.getY())){
+                                b=true;
+                            }
+                            else{
+                               	b=false;
+                                repaint();
+                            }
                         }
+
+
                         if(b!=true){
-                            save = null;
                             x = evt.getX();
                             y = evt.getY();
-                            for (Figure fig : fs) {
-                                if (fig.clicked(x,y)) {
-                                    save = fig;
-                                    i=fs.indexOf(fig);
-                                    z = 1;
+                            for (Button b : fb) {
+                                if(b.clicked(x,y)){
+                                    auxb=b;
+                                    z=1;
                                 }
                             }
+                            
+                            if(z!=1){
+                                if(auxb!=null){
+                                    if(auxb.idx==1){
+                                        fs.add(new Rect(evt.getX(),evt.getY(), 30, 40, 0, 0, 0, 255, 255, 255, false));
+                                        k=k+1; 
+                                    }
+                                    if(auxb.idx==2){
+                                        fs.add(new Circle(evt.getX(),evt.getY(), 30, 30, 0, 0, 0,255, 255, 255, false));
+                                        k=k+1; 
+                                    }
+                                    if(auxb.idx==3){
+                                        fs.add(new Ellipse(evt.getX(),evt.getY(), 40, 10, 0, 0, 0,255, 255, 255, false));
+                                        k=k+1; 
+                                    }
+                                    if(auxb.idx==4){
+                                        fs.add(new Trian(evt.getX(),evt.getY(), 30, 40, 0, 0, 0, 255, 255, 255, false));
+                                        k=k+1; 
+                                    }
+                                    auxb=null;
+                                }
+                                for (Button2 b2 : fb2) {
+                                    if(b2.clicked(x,y)){
+                                        auxb2=b2;
+                                    }
+                                }
+                                if(auxb2!=null){
+                                    if(auxb2.idx==5){
+                                        if(save!=null){
+                                            save=null;
+                                            fs.remove(i);
+                                            k=k-1;
+                                        }
+                                    }
+                                    if(auxb2.idx==6){
+                                        save=null;
+                                        fs.clear();
+                                        k=0;
+                                    }
+                                    auxb2=null;
+                                }
+                                save = null;
+                                for (Figure fig : fs) {
+                                    if (fig.clicked(x,y)) {
+                                        save = fig;
+                                        i=fs.indexOf(fig);
+                                        z = 1;
+                                    }
+                                } 
+                            }
+                            repaint();
                             if (save!=null) {
                                 fs.remove(i);
-                                save.setf(true);
                                 fs.add(save);
                                 for (Figure fig : fs) {
                                     if(fig==save){
@@ -280,7 +338,6 @@ class ListFrame extends JFrame {
                                 }
                             }
                             if (z == 1) {
-                                save.local();
                                 repaint();
                                 z = 0;
                             }
@@ -303,8 +360,6 @@ class ListFrame extends JFrame {
                 	}
                 	if(b==false && save!=null){
                     	save2 = null;
-                    	
-
                     	for (Figure fig : fs) {
                         	if (fig.clicked(e.getX(),e.getY())) {
                         	save2 = fig;
@@ -321,13 +376,21 @@ class ListFrame extends JFrame {
         	});
 
         this.setTitle("Lista Figuras");
-        this.setSize(350, 350);
+        this.setSize(750, 500);
     }
 
     public void paint (Graphics g) {
         super.paint(g);
         for (Figure f: this.fs) {
-            f.paint(g);
+            f.paint(g,save==f);
+        }
+        for (Button b: this.fb) {
+            b.paint(g,auxb==b);
+        }
+        for (Button2 b2: this.fb2) {
+            b2.paint(g,auxb2==b2);
         }
     }
+    
+
 }
