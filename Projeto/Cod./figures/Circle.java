@@ -1,9 +1,10 @@
 package figures;
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 public class Circle extends Figure {
     private int ir, ig, ib;
 
-    public Circle(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib, boolean foco) {
+    public Circle(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib,boolean foco) {
         this.x = x;
         this.y = y;
         this.w = w;
@@ -14,15 +15,19 @@ public class Circle extends Figure {
         this.ir = ir;
         this.ig = ig;
         this.ib = ib;
-	this.foco=foco;
+        this.foco=foco;
     }
-    public void paint(Graphics g) {
-	
+    public boolean clicked(int x, int y){
+        Ellipse2D.Double circle = new Ellipse2D.Double(this.x, this.y, this.w, this.h);
+        return(circle.contains(x,y));
+     }
+    public void paint(Graphics g,boolean b) {
+        this.foco=b;
         g.setColor(new Color(this.r, this.g, this.b));
         g.drawArc(this.x, this.y, this.w, this.h,0,360);
         g.setColor(new Color(this.ir, this.ig, this.ib));
         g.fillArc(this.x, this.y, this.w, this.h,0,360);
-	if(foco){
+        if(foco){
             g.setColor(new Color(0, 0, 0));
             g.drawRect(this.x-1, this.y-1, this.w+2, this.h+2);
             g.setColor(new Color(0, 0, 0));
@@ -30,6 +35,20 @@ public class Circle extends Figure {
         }
         
     }
+    public  boolean clickdrag(int x, int y){
+        return(x<=this.x+this.w && x>=this.x+this.w-7 && y<= this.y+ this.h && y>= this.y+ this.h-7);
+     }
+     public int getx(){
+        return (this.x);
+     }
+      
+     public int gety(){
+        return (this.y);
+     }
+  
+     public void setf(boolean b){
+        this.foco=b;
+     }
 
     public void local() {
         System.out.format("Local %d %d %d %d", this.x, this.y, this.w, this.h);
@@ -44,12 +63,16 @@ public class Circle extends Figure {
         this.x=x-(this.w)/2;
         this.y=y-(this.h)/2;
     }
-    
-	
+    public boolean VerP(int x,int y, Figure f){
+        if (x >= f.x && x <= f.x + f.w && y >= f.y && y <= f.y + f.h){
+            return true;
+        }
+        return false;
+	}
     public void psize(int w, int h){
         this.h = h;
         this.w = w;
-     	}
+     }
      public void changeC(int r, int g, int b){
         if(this.r+r<255){ 
             if(this.r+r<0){ this.r=0;}
@@ -69,6 +92,11 @@ public class Circle extends Figure {
             else{this.b=this.b+b;}
         }
         else{this.b=255;}
+        
+        
+        
+        
+        
         
     }
     public void changeCi(int r, int g, int b){
@@ -92,4 +120,5 @@ public class Circle extends Figure {
         }
         else{this.ib=255;}
     }
+
 }
