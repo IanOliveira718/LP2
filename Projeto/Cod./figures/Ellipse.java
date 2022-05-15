@@ -6,7 +6,7 @@ import java.awt.geom.Ellipse2D;
 public class Ellipse extends Figure {
     private int ir, ig, ib;
 
-    public Ellipse(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib,boolean foco) {
+    public Ellipse(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib) {
         this.x = x;
         this.y = y;
         this.w = w;
@@ -17,7 +17,6 @@ public class Ellipse extends Figure {
         this.ir = ir;
         this.ig = ig;
         this.ib = ib;
-        this.foco=foco;
     }
     
     public boolean clicked(int x, int y){
@@ -32,7 +31,7 @@ public class Ellipse extends Figure {
         g2d.draw(new Ellipse2D.Double(this.x, this.y, this.w, this.h));
         g.setColor(new Color(this.ir, this.ig, this.ib));
         g2d.fill(new Ellipse2D.Double(this.x, this.y, this.w, this.h));
-        if(foco){
+        if(b){
             g.setColor(new Color(0, 0, 0));
             g.drawRect(this.x-1, this.y-1, this.w+2, this.h+2);
             g.setColor(new Color(0, 0, 0));
@@ -48,10 +47,6 @@ public class Ellipse extends Figure {
       
      public int gety(){
         return (this.y);
-     }
-  
-     public void setf(boolean b){
-        this.foco=b;
      }
 
     public void local() {
