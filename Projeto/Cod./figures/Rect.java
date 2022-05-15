@@ -16,19 +16,17 @@ public class Rect extends Figure {
         this.ir = ir;
         this.ig = ig;
         this.ib = ib;
-        this.foco=foco;
     }
     public boolean clicked(int x, int y){
         return(this.x<=x && x<=this.x+this.w && this.y<=y && y<=this.y+this.h);
      }
 
     public void paint(Graphics g,boolean b) {
-        this.foco=b;
         g.setColor(new Color(this.r, this.g, this.b));
         g.drawRect(this.x, this.y, this.w, this.h);
         g.setColor(new Color(this.ir, this.ig, this.ib));
         g.fillRect(this.x, this.y, this.w, this.h);
-        if(foco){
+        if(b){
             g.setColor(new Color(0, 0, 0));
             g.drawRect(this.x-1, this.y-1, this.w+2, this.h+2);
             g.setColor(new Color(0, 0, 0));
@@ -46,10 +44,6 @@ public class Rect extends Figure {
       
      public int gety(){
         return (this.y);
-     }
-  
-     public void setf(boolean b){
-        this.foco=b;
      }
 
     public void local() {
