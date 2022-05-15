@@ -4,7 +4,7 @@ import java.awt.geom.Ellipse2D;
 public class Circle extends Figure {
     private int ir, ig, ib;
 
-    public Circle(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib,boolean foco) {
+    public Circle(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib) {
         this.x = x;
         this.y = y;
         this.w = w;
@@ -15,19 +15,17 @@ public class Circle extends Figure {
         this.ir = ir;
         this.ig = ig;
         this.ib = ib;
-        this.foco=foco;
     }
     public boolean clicked(int x, int y){
         Ellipse2D.Double circle = new Ellipse2D.Double(this.x, this.y, this.w, this.h);
         return(circle.contains(x,y));
      }
     public void paint(Graphics g,boolean b) {
-        this.foco=b;
         g.setColor(new Color(this.r, this.g, this.b));
         g.drawArc(this.x, this.y, this.w, this.h,0,360);
         g.setColor(new Color(this.ir, this.ig, this.ib));
         g.fillArc(this.x, this.y, this.w, this.h,0,360);
-        if(foco){
+        if(b){
             g.setColor(new Color(0, 0, 0));
             g.drawRect(this.x-1, this.y-1, this.w+2, this.h+2);
             g.setColor(new Color(0, 0, 0));
@@ -46,9 +44,6 @@ public class Circle extends Figure {
         return (this.y);
      }
   
-     public void setf(boolean b){
-        this.foco=b;
-     }
 
     public void local() {
         System.out.format("Local %d %d %d %d", this.x, this.y, this.w, this.h);
@@ -91,13 +86,7 @@ public class Circle extends Figure {
             if(this.b+b<0){this.b=0;}
             else{this.b=this.b+b;}
         }
-        else{this.b=255;}
-        
-        
-        
-        
-        
-        
+        else{this.b=255;}        
     }
     public void changeCi(int r, int g, int b){
 
