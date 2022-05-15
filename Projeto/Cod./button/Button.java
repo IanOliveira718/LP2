@@ -16,10 +16,6 @@ public class Button implements iVisible {
     public Button (int idx, Figure fig) {
         this.idx = idx;
         this.fig = fig;
-        this.fig.x = PAD+SPC;
-        this.fig.y = PAD+SPC + idx*DIM;
-        this.fig.w = DIM-PAD*2;
-        this.fig.h = DIM-PAD*2;
     }
 
     public boolean clicked (int x, int y) {
