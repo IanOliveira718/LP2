@@ -14,7 +14,7 @@
   Caso aperte novamente em outro botão, 
   não será criada sua figura, apenas trocada a opção.
 + A opção **ERASE** irá ter ação apenas se uma figura 
-  estiver em foco.
+  estiver em foco, que será apaga-la.
 + A opção **CLEAN** irá remover todas as figuras criadas.
 
 
