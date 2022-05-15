@@ -9,7 +9,6 @@ public abstract class  Figure implements iVisible,Serializable{
    
    public int x, y, w, h;
    protected int r, g, b;
-   protected boolean foco;
 
    public abstract void local();
 
@@ -24,7 +23,6 @@ public abstract class  Figure implements iVisible,Serializable{
     
    public abstract int gety();
 
-   public abstract void setf(boolean b);
 ///////////////////  
 
    public abstract boolean VerP(int x, int y, Figure f);
