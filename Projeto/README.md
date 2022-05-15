@@ -11,7 +11,7 @@
 #### Barra de ferramentas:
 + Para criar um objeto desejado, clique nele e 
   em seguida clique em qualquer região do painel.
-  Caso aperte novamente em outra figura, 
+  Caso aperte novamente em outro botão, 
   não será criada sua figura, apenas trocada a opção.
 + A opção **ERASE** irá ter ação apenas se uma figura 
   estiver em foco.
