@@ -21,7 +21,7 @@ class ListFrame extends JFrame {
     ArrayList<Button> fb = new ArrayList<Button>();
     ArrayList<Button2> fb2 = new ArrayList<Button2>();
     Random rand = new Random();
-    Figure save=null;
+    Figure figfoco=null;
     Figure save2=null;
     Button auxb=null;
     Button2 auxb2=null;
@@ -34,10 +34,10 @@ class ListFrame extends JFrame {
     int k=0;
 
     ListFrame () {
-        fb.add(new Button(1, new Rect(1, 2, 3, 4, 0, 0, 0, 0, 0, 0, false)));
-        fb.add(new Button(2, new Circle(1, 2, 3, 4, 0, 0, 0,0, 0, 0, false)));
-        fb.add(new Button(3, new Ellipse(1, 2, 3, 1, 0, 0, 0,0, 0, 0, false)));
-        fb.add(new Button(4, new Trian(1, 2, 3, 4, 0, 0, 0, 0, 0, 0, false)));
+        fb.add(new Button(1, new Rect(24, 24+40, 40-8, 40-8, 40-8, 0, 0, 0, 0, 0)));
+        fb.add(new Button(2, new Circle(24, 24+40*2, 40-8, 40-8, 0, 0, 0,0, 0, 0)));
+        fb.add(new Button(3, new Ellipse(24, 29+40*3, 40-8, 40-16, 0, 0, 0,0, 0, 0)));
+        fb.add(new Button(4, new Trian(24, 24+40*4, 40-8, 40-8, 0, 0, 0, 0, 0, 0)));
         fb2.add(new Button2(5, "Erase"));
         fb2.add(new Button2(6, "Clean"));
 
@@ -75,100 +75,100 @@ class ListFrame extends JFrame {
                 public void keyPressed (KeyEvent evt) {
 			
 			if (evt.getKeyChar() == '7') {
-                            if (save != null) {
-                                save.changeCi(10,0, 0);
+                            if (figfoco != null) {
+                                figfoco.changeCi(10,0, 0);
                                 repaint();
                             }
                         }if (evt.getKeyChar() == '4') {
-                            if (save != null) {
-                                save.changeCi(-10,0, 0);
+                            if (figfoco != null) {
+                                figfoco.changeCi(-10,0, 0);
                                 repaint();
                             }
                         }
                         if (evt.getKeyChar() == '8') {
-                            if (save != null) {
-                                save.changeCi(0,10, 0);
+                            if (figfoco != null) {
+                                figfoco.changeCi(0,10, 0);
                                 repaint();
                             }
                         }if (evt.getKeyChar() == '5') {
-                            if (save != null) {
-                                save.changeCi(0,-10, 0);
+                            if (figfoco != null) {
+                                figfoco.changeCi(0,-10, 0);
                                 repaint();
                             }
                         }
                         if (evt.getKeyChar() == '9') {
-                            if (save != null) {
-                                save.changeCi(0,0,10);
+                            if (figfoco != null) {
+                                figfoco.changeCi(0,0,10);
                                 repaint();
                             }
                         }if (evt.getKeyChar() == '6') {
-                            if (save != null) {
-                                save.changeCi(0,0,-10);
+                            if (figfoco != null) {
+                                figfoco.changeCi(0,0,-10);
                                 repaint();
                             }
                         }if (evt.getKeyChar() == 'g') {
-                            if (save != null) {
-                                save.changeC(10,0, 0);
+                            if (figfoco != null) {
+                                figfoco.changeC(10,0, 0);
                                 repaint();
                             }
                         }if (evt.getKeyChar() == 'b') {
-                            if (save != null) {
-                                save.changeC(-10,0, 0);
+                            if (figfoco != null) {
+                                figfoco.changeC(-10,0, 0);
                                 repaint();
                             }
                         }
                         if (evt.getKeyChar() == 'h') {
-                            if (save != null) {
-                                save.changeC(0,10, 0);
+                            if (figfoco != null) {
+                                figfoco.changeC(0,10, 0);
                                 repaint();
                             }
                         }if (evt.getKeyChar() == 'n') {
-                            if (save != null) {
-                                save.changeC(0,-10, 0);
+                            if (figfoco != null) {
+                                figfoco.changeC(0,-10, 0);
                                 repaint();
                             }
                         }
                         if (evt.getKeyChar() == 'j') {
-                            if (save != null) {
-                                save.changeC(0,0,10);
+                            if (figfoco != null) {
+                                figfoco.changeC(0,0,10);
                                 repaint();
                             }
                         }if (evt.getKeyChar() == 'm') {
-                            if (save != null) {
-                                save.changeC(0,0,-10);
+                            if (figfoco != null) {
+                                figfoco.changeC(0,0,-10);
                                 repaint();
                             }
                         }
 			
 			
                         if (evt.getKeyChar() == 'a') {
-                            if (save != null) {
-                                save.drag(-10, 0);
+                            if (figfoco != null) {
+                                figfoco.drag(-10, 0);
                                 repaint();
                             }
                         }
                         if (evt.getKeyChar() == 'd') {
-                            if (save != null) {
-                                save.drag(10, 0);
+                            if (figfoco != null) {
+                                figfoco.drag(10, 0);
                                 repaint();
                             }
                         }
                         if (evt.getKeyChar() == 'w') {
-                            if (save != null) {
-                                save.drag(0, -10);
+                            if (figfoco != null) {
+                                figfoco.drag(0, -10);
                                 repaint();
                             }
                         }
                         if (evt.getKeyChar() == 's') {
-                            if (save != null) {
-                                save.drag(0, 10);
+                            if (figfoco != null) {
+                                figfoco.drag(0, 10);
                                 repaint();
                             }
                         }
                         
                         if(evt.getKeyChar() == 'l') {
-                            if (save != null) {
-                                save=null;
+                            if (figfoco != null) {
+                                figfoco=null;
                                 fs.remove(i);
                                 repaint();
 				                k=k-1;
@@ -183,11 +183,11 @@ class ListFrame extends JFrame {
                                 else{
                                     i=i+1;
                                 }
-                                save = fs.get(i);
+                                figfoco = fs.get(i);
                                 fs.remove(i);
-                                fs.add(save);
+                                fs.add(figfoco);
                                 for (Figure fig : fs) {
-                                	if(fig==save){
+                                	if(fig==figfoco){
                                             i=fs.indexOf(fig);
                                         }
                                     } 
@@ -204,7 +204,7 @@ class ListFrame extends JFrame {
 			            int ir = rand.nextInt(255);
 			            int ig = rand.nextInt(255);
 			            int ib = rand.nextInt(255);
-                        fs.add(new Rect(x-w/2, y-h/2, w, h,r, g, b, ir, ig, ib,false));
+                        fs.add(new Rect(x-w/2, y-h/2, w, h,r, g, b, ir, ig, ib));
 			            k=k+1;
                         repaint();
                     }
@@ -218,7 +218,7 @@ class ListFrame extends JFrame {
 			            int ir = rand.nextInt(255);
 			            int ig = rand.nextInt(255);
 			            int ib = rand.nextInt(255);
-                        fs.add(new Ellipse(x-w/2, y-h/2, w, h,r, g, b, ir, ig, ib,false));
+                        fs.add(new Ellipse(x-w/2, y-h/2, w, h,r, g, b, ir, ig, ib));
 			            k=k+1;
                         repaint(); 
                     }
@@ -232,7 +232,7 @@ class ListFrame extends JFrame {
                             int ig = rand.nextInt(255);
                             int ib = rand.nextInt(255);
 				  
-                        fs.add(new Circle(x-w/2, y-h/2, w, w, r, g, b, ir, ig, ib,false));
+                        fs.add(new Circle(x-w/2, y-h/2, w, w, r, g, b, ir, ig, ib));
 			            k=k+1;   
                         repaint();
                     }
@@ -245,7 +245,7 @@ class ListFrame extends JFrame {
                             int ir = rand.nextInt(255);
                             int ig = rand.nextInt(255);
                             int ib = rand.nextInt(255);
-                            fs.add(new Trian(x-w/2, y-h/2, w, h, r, g, b, ir, ig, ib,false));
+                            fs.add(new Trian(x-w/2, y-h/2, w, h, r, g, b, ir, ig, ib));
 			    k=k+1;
                             repaint(); 
                         }
@@ -257,8 +257,8 @@ class ListFrame extends JFrame {
 		this.addMouseListener(
                 	new MouseAdapter() {
                     	public void mousePressed(MouseEvent evt) {
-                        if(save!=null){
-                            	if(save.clickdrag(evt.getX(),evt.getY())){
+                        if(figfoco!=null){
+                            	if(figfoco.clickdrag(evt.getX(),evt.getY())){
                                 b=true;
                             }
                             else{
@@ -266,8 +266,6 @@ class ListFrame extends JFrame {
                                 repaint();
                             }
                         }
-
-
                         if(b!=true){
                             x = evt.getX();
                             y = evt.getY();
@@ -281,19 +279,19 @@ class ListFrame extends JFrame {
                             if(z!=1){
                                 if(auxb!=null){
                                     if(auxb.idx==1){
-                                        fs.add(new Rect(evt.getX(),evt.getY(), 30, 40, 0, 0, 0, 255, 255, 255, false));
+                                        fs.add(new Rect(evt.getX(),evt.getY(), 30, 40, 0, 0, 0, 255, 255, 255));
                                         k=k+1; 
                                     }
                                     if(auxb.idx==2){
-                                        fs.add(new Circle(evt.getX(),evt.getY(), 30, 30, 0, 0, 0,255, 255, 255, false));
+                                        fs.add(new Circle(evt.getX(),evt.getY(), 30, 30, 0, 0, 0,255, 255, 255));
                                         k=k+1; 
                                     }
                                     if(auxb.idx==3){
-                                        fs.add(new Ellipse(evt.getX(),evt.getY(), 40, 10, 0, 0, 0,255, 255, 255, false));
+                                        fs.add(new Ellipse(evt.getX(),evt.getY(), 40, 10, 0, 0, 0,255, 255, 255));
                                         k=k+1; 
                                     }
                                     if(auxb.idx==4){
-                                        fs.add(new Trian(evt.getX(),evt.getY(), 30, 40, 0, 0, 0, 255, 255, 255, false));
+                                        fs.add(new Trian(evt.getX(),evt.getY(), 30, 40, 0, 0, 0, 255, 255, 255));
                                         k=k+1; 
                                     }
                                     auxb=null;
@@ -305,34 +303,34 @@ class ListFrame extends JFrame {
                                 }
                                 if(auxb2!=null){
                                     if(auxb2.idx==5){
-                                        if(save!=null){
-                                            save=null;
+                                        if(figfoco!=null){
+                                            figfoco=null;
                                             fs.remove(i);
                                             k=k-1;
                                         }
                                     }
                                     if(auxb2.idx==6){
-                                        save=null;
+                                        figfoco=null;
                                         fs.clear();
                                         k=0;
                                     }
                                     auxb2=null;
                                 }
-                                save = null;
+                                figfoco = null;
                                 for (Figure fig : fs) {
                                     if (fig.clicked(x,y)) {
-                                        save = fig;
+                                        figfoco = fig;
                                         i=fs.indexOf(fig);
                                         z = 1;
                                     }
                                 } 
                             }
                             repaint();
-                            if (save!=null) {
+                            if (figfoco!=null) {
                                 fs.remove(i);
-                                fs.add(save);
+                                fs.add(figfoco);
                                 for (Figure fig : fs) {
-                                    if(fig==save){
+                                    if(fig==figfoco){
                                     i=fs.indexOf(fig);
                                     }
                                 }
@@ -352,13 +350,13 @@ class ListFrame extends JFrame {
              	}
             	public void mouseDragged(MouseEvent e) {
                 	if(b){
-                    	if(e.getX()-save.getx()>0 && e.getY()-save.gety()>0){
-                        	save.psize(e.getX()-save.getx(), e.getY()-save.gety());
+                    	if(e.getX()-figfoco.getx()>0 && e.getY()-figfoco.gety()>0){
+                        	figfoco.psize(e.getX()-figfoco.getx(), e.getY()-figfoco.gety());
                         	repaint();
                     	}
                     
                 	}
-                	if(b==false && save!=null){
+                	if(b==false && figfoco!=null){
                     	save2 = null;
                     	for (Figure fig : fs) {
                         	if (fig.clicked(e.getX(),e.getY())) {
@@ -382,7 +380,7 @@ class ListFrame extends JFrame {
     public void paint (Graphics g) {
         super.paint(g);
         for (Figure f: this.fs) {
-            f.paint(g,save==f);
+            f.paint(g,figfoco==f);
         }
         for (Button b: this.fb) {
             b.paint(g,auxb==b);
@@ -391,6 +389,4 @@ class ListFrame extends JFrame {
             b2.paint(g,auxb2==b2);
         }
     }
-    
-
 }
