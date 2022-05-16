@@ -15,6 +15,7 @@ public class Trian extends Figure {
         this.ib = ib;
     }
     public boolean clicked(int x, int y){
+	boolean b=false;
         if(y>=this.y && y<=this.y+this.h){
             float newW=this.w*(y-this.y)/this.h;
             if(x>=this.x+(this.w/2)-(newW/2) && x<=this.x+(this.w/2)+(newW/2)){
