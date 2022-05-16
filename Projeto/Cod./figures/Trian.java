@@ -15,7 +15,6 @@ public class Trian extends Figure {
         this.ib = ib;
     }
     public boolean clicked(int x, int y){
-        boolean b=false;
         if(y>=this.y && y<=this.y+this.h){
             float newW=this.w*(y-this.y)/this.h;
             if(x>=this.x+(this.w/2)-(newW/2) && x<=this.x+(this.w/2)+(newW/2)){
@@ -50,9 +49,6 @@ public class Trian extends Figure {
         return (this.y);
      }
   
-     public void setf(boolean b){
-        this.foco=b;
-     }
     public void local() {
         System.out.format("Local %d %d %d %d", this.x, this.y, this.w, this.h);
     }
