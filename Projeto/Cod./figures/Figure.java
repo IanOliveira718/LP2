@@ -16,14 +16,11 @@ public abstract class  Figure implements iVisible,Serializable{
 
    public abstract void mdrag(int x, int y);
 
-///////////////////a mudar
    public abstract boolean clickdrag(int x, int y);
 
    public abstract int getx();
     
    public abstract int gety();
-
-///////////////////  
 
    public abstract boolean VerP(int x, int y, Figure f);
    
