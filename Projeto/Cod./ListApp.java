@@ -249,7 +249,6 @@ class ListFrame extends JFrame {
 			    k=k+1;
                             repaint(); 
                         }
-
                 }
             }
         );
@@ -274,9 +273,15 @@ class ListFrame extends JFrame {
                                     auxb=b;
                                     z=1;
                                 }
-                            }
-                            
+                            }  
                             if(z!=1){
+                                for (Button2 b2 : fb2) {
+                                    if(b2.clicked(x,y)){
+                                        auxb2=b2;
+                                        auxb=null;
+                                        repaint();
+                                    }
+                                }
                                 if(auxb!=null){
                                     if(auxb.idx==1){
                                         fs.add(new Rect(evt.getX(),evt.getY(), 30, 40, 0, 0, 0, 255, 255, 255));
@@ -295,11 +300,6 @@ class ListFrame extends JFrame {
                                         k=k+1; 
                                     }
                                     auxb=null;
-                                }
-                                for (Button2 b2 : fb2) {
-                                    if(b2.clicked(x,y)){
-                                        auxb2=b2;
-                                    }
                                 }
                                 if(auxb2!=null){
                                     if(auxb2.idx==5){
@@ -354,7 +354,6 @@ class ListFrame extends JFrame {
                         	figfoco.psize(e.getX()-figfoco.getx(), e.getY()-figfoco.gety());
                         	repaint();
                     	}
-                    
                 	}
                 	if(b==false && figfoco!=null){
                     	save2 = null;
@@ -372,7 +371,6 @@ class ListFrame extends JFrame {
                 		}
             		}
         	});
-
         this.setTitle("Lista Figuras");
         this.setSize(750, 500);
     }
