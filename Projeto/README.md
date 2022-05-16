@@ -5,6 +5,11 @@
 + Crie uma pasta neste mesmo diretório chamada figures;
 + Coloque dentro desta nova pasta figures os Aquivos de 
   https://github.com/IanOliveira718/LP2/tree/main/Projeto/Cod./figures;
++ Crie outras três pastas chamadas button, buttonextra e ivisible;
++ Salve cada arquivo desses links nas pastas da mesma maneira consecutivamente;
++ https://github.com/IanOliveira718/LP2/tree/main/Projeto/Cod./button
++ https://github.com/IanOliveira718/LP2/tree/main/Projeto/Cod./buttonextra
++ https://github.com/IanOliveira718/LP2/tree/main/Projeto/Cod./ivisible
 + Basta compilar apenas o arquivo _ListApp.java_;
 + Ao final, para executar o app, basta executar o  _ListApp_ ;
 
