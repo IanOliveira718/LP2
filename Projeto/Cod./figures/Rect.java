@@ -5,7 +5,7 @@ import java.awt.*;
 public class Rect extends Figure {
     private int ir, ig, ib;
 
-    public Rect(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib,boolean foco) {
+    public Rect(int x, int y, int w, int h, int r, int g, int b, int ir, int ig, int ib) {
         this.x = x;
         this.y = y;
         this.w = w;
